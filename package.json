@@ -1,0 +1,30 @@
+{
+  "name": "nodex-0",
+  "version": "2.0.0",
+  "description": "nodex-0 base on nodex-libs",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "cross-env NODE_ENV=dev nodemon --exec 'nodex start'",
+    "stage": "pm2-runtime start pm2.stage.json",
+    "prod": "pm2-runtime start pm2.prod.json",
+    "debug:dev": "cross-env NODE_ENV=dev nodex start",
+    "debug:stage": "cross-env NODE_ENV=stage nodex start",
+    "debug:prod": "cross-env NODE_ENV=prod nodex start",
+    "lint": "eslint . --fix"
+  },
+  "dependencies": {
+    "nodex-cli": "^1.1.0",
+    "nodex-libs": "^2.3.3",
+    "pm2": "^4.5.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "eslint": "^7.11.0",
+    "nodemon": "^2.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leansocket/nodex-0.git"
+  },
+  "license": "MIT"
+}
