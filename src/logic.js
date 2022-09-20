@@ -22,16 +22,16 @@ const idCreate = flakes.create();
 exports.init = async function (args) { 
   console.log('logic init.');
   console.log('logic init args:', args);
-  log.init({
-    scope: "team",
-    server: {
-      url: "https://leansocket.tech/api/easegram-logs/add_logs",
-      appid: "000ecbd8f11e0000000c",
-      secret: "07aa5a84e5571f10daed5addd81c0064",
-      interval: 6000
-    },
-    handler: ()=>{}
-  });
+  // log.init({
+  //   scope: "team",
+  //   server: {
+  //     url: "https://leansocket.tech/api/easegram-logs/add_logs",
+  //     appid: "000ecbd8f11e0000000c",
+  //     secret: "07aa5a84e5571f10daed5addd81c0064",
+  //     interval: 6000
+  //   },
+  //   handler: ()=>{}
+  // });
 };
 
 exports.helloWorld = async function () {
@@ -244,7 +244,7 @@ exports.createGroup = async function({ name, gid }) {
  */
 exports.updateGroup = async function({ id, gid, name }) {
     fmt.required(id, 'string', 2, 64);
-    fmt.required(name, 'word', 2, 64);
+    fmt.required(name, 'string', 2, 64);
     fmt.required(gid, 'string', 2, 64);
 
     return await data.updateGroup({ id, gid, name });
